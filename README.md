@@ -229,7 +229,7 @@ Gemaakt met [Draw.io](https://app.diagrams.net/):
 
 This Project is [WinterValley](https://169849.ao-alkmaar.nl/project-wintervalley/page/index.php) Licensed
 
-Partner with [ID&T](https://www.id-t.com)
+Partner with [Horizon College](https://www.horizoncollege.nl/)
 
 <br/>
 
