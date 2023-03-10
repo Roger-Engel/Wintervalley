@@ -1,0 +1,1669 @@
+body {
+  margin: auto;
+  min-height: 100vh;
+  background-color: #dfcfd5;
+}
+
+/* Logo en Login/Register */
+.logo {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 5px;
+}
+
+.logo h1 {
+  font-size: 250%;
+  font-family: Century;
+  color: #3c4770;
+}
+
+img[alt="logo"] {
+  width: 100px;
+  height: 100px;
+  padding-right: 25px;
+}
+
+.empty {
+  flex-grow: 16;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.empty2 {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 15px;
+}
+
+.empty3 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+.logo ul li {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+/* Login */
+
+.login-data {
+  margin-bottom: 20px;
+}
+
+.error-text-login {
+  flex-grow: 1;
+  font-size: 25px;
+  flex-direction: row;
+  color: white;
+  background-color: red;
+  font-family: Monospace;
+  font-weight: bold;
+  text-decoration: none;
+  border-color: white;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: solid;
+  margin-right: 15px;
+  text-align: center;
+}
+
+.error-text-register {
+  flex-grow: 1;
+  font-size: 25px;
+  flex-direction: column;
+  color: white;
+  background-color: red;
+  font-family: Monospace;
+  font-weight: bold;
+  text-decoration: none;
+  border-color: white;
+  border-radius: 5px;
+  border-width: 3px;
+  border-style: solid;
+  text-align: center;
+}
+.open-button {
+  flex-grow: 1;
+  font-size: 25px;
+  flex-direction: row;
+  color: #3c4770;
+  background-color: #be8199;
+  font-family: Monospace;
+  font-weight: bold;
+  text-decoration: none;
+  border-color: #3c4770;
+  border-width: 3px;
+  border-style: solid;
+}
+
+.open-button:hover {
+  color: #be8199;
+  transform: scale(1.05);
+  background-color: #3c4770;
+  border-color: #be8199;
+}
+
+/* The popup form - hidden by default */
+
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid black;
+  z-index: 9;
+  pointer-events: auto;
+}
+
+.logo-popup {
+  width: 120px;
+  height: 120px;
+  float: right;
+  margin-right: 2px;
+  margin-bottom: 10px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 8;
+  display: none; /* hide the overlay by default */
+  pointer-events: none;
+}
+
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type="popup_text"],
+.form-container input[type="popup_password"] {
+  width: 100%;
+  padding: 15px;
+
+  border: none;
+  background: #f1f1f1;
+}
+
+#login_email {
+  width: 270px;
+}
+
+#login_password {
+  width: 270px;
+}
+
+.popup_color {
+  background-color: white;
+  color: #3c4770;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #be8199;
+  color: #3c4770;
+  padding: 16px 20px;
+  font-family: Monospace;
+  font-weight: bold;
+  border: 2px solid #3c4770;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+button[type="submit"] {
+  font-size: 20px;
+}
+button[type="button"] {
+  font-size: 20px;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
+
+/* log out */
+
+.log-out-button {
+  flex-grow: 1;
+  font-size: 25px;
+  flex-direction: row;
+  color: #3c4770;
+  background-color: #be8199;
+  font-family: Monospace;
+  font-weight: bold;
+  text-decoration: none;
+  border-color: #3c4770;
+  border-width: 3px;
+  border-style: solid;
+  margin-left: 15px;
+  text-align: center;
+}
+
+.log-out-button:hover {
+  color: #be8199;
+  transform: scale(1.05);
+  background-color: #3c4770;
+  border-color: #be8199;
+}
+/* Register */
+
+.register-open-button {
+  flex-grow: 1;
+  font-size: 25px;
+  flex-direction: row;
+  color: #3c4770;
+  background-color: #be8199;
+  font-family: Monospace;
+  font-weight: bold;
+  text-decoration: none;
+  border-color: #3c4770;
+  border-width: 3px;
+  border-style: solid;
+  margin-left: 15px;
+}
+
+.register-open-button:hover {
+  color: #be8199;
+  transform: scale(1.05);
+  background-color: #3c4770;
+  border-color: #be8199;
+}
+
+/* The popup form - hidden by default */
+.register-form-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid black;
+  z-index: 9;
+}
+
+.register-form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: #dfcfd5;
+}
+
+.register-form-container input[type="popup_text"],
+.register-form-container input[type="popup_password"],
+.register-form-container input[type="popup_email"] {
+  width: 100%;
+  padding: 15px;
+
+  border: none;
+  background: #f1f1f1;
+}
+
+#register_name {
+  width: 292px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+#register_password {
+  width: 292px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+#register_email {
+  width: 292px;
+  height: 30px;
+}
+
+.register-popup_color {
+  background-color: #dfcfd5;
+  font-size: 20px;
+  color: #3c4770;
+}
+
+/* When the inputs get focus, do something */
+.register-form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.register-form-container .btn {
+  background-color: #be8199;
+  color: #3c4770;
+  padding: 16px 20px;
+  font-family: Monospace;
+  font-weight: bold;
+  border: 2px solid #3c4770;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.register-form-container .cancel {
+  background-color: #aab1c3;
+  color: #3c4770;
+}
+
+/* Add some hover effects to buttons */
+.register-form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
+
+/* Navbar */
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3c4770;
+  color: #be8199;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  display: flex;
+}
+
+nav li {
+  padding: 0px 20px;
+}
+
+nav ul li a {
+  display: flex;
+  color: #be8199;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: Monospace;
+  font-weight: bold;
+  padding: 0px 6px;
+}
+
+nav ul li a:hover {
+  color: #3c4770;
+  background-color: #be8199;
+  transform: scale(1.1);
+  border-radius: 6px;
+}
+
+img[alt="secret"] {
+  width: 38px;
+  height: 38px;
+  height: fit-content;
+  margin-right: 8px;
+}
+
+img[alt="secret"]:hover {
+  background-color: #be8199;
+}
+
+/* Home */
+img[alt="buiten-festival"] {
+  display: flex;
+  margin: auto;
+  max-width: 100%;
+  height: auto;
+  width: auto\9;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 95%;
+  height: fit-content;
+  padding-top: 44px;
+}
+
+.homeevents {
+  display: flex;
+  margin-left: 44px;
+  font-size: 50px;
+  color: #3c4770;
+  font-family: century;
+}
+
+.homeeventstext {
+  display: flex;
+  margin-left: 43px;
+  width: 50%;
+  max-width: 100%;
+  font-size: 20px;
+  color: #3c4770;
+  font-family: Monospace;
+  font-weight: bold;
+}
+
+.hometitles {
+  display: flex;
+  flex-direction: row;
+}
+
+.ticketshomediv {
+  display: flex;
+  flex-direction: row;
+}
+
+.ticketshome {
+  display: flex;
+  flex-direction: row;
+}
+
+.ticketshomealltext {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+}
+
+.empty4 {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: 20px;
+}
+
+.tickets_homebutton {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.ticketshomeall {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  margin-right: 44px;
+  flex-direction: column;
+  background-color: #aab1c3;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #3c4770;
+  width: 500px;
+  max-height: 50%;
+  height: 50%;
+  padding-left: 30px;
+}
+
+.home_date_event_live {
+  font-family: Monospace;
+  font-weight: bold;
+  font-size: 15px;
+  color: #3c4770;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.home_wintervally {
+  color: #3c4770;
+  font-family: Monospace;
+  font-weight: bold;
+}
+
+.hometickettext {
+  color: #3c4770;
+  font-family: century;
+  font-weight: bold;
+}
+
+#moreinfo {
+  background-color: #be8199;
+  color: #3c4770;
+  border-color: #447294;
+  height: 40px;
+  font-size: 20px;
+  width: 150px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  border-width: 3px;
+  font-family: Monospace;
+  font-weight: bold;
+  border: solid;
+  text-align: center;
+}
+
+#moreinfo:hover {
+  color: #be8199;
+  transform: scale(1.05);
+  background-color: #3c4770;
+  border-color: #aab1c3;
+  border: solid 2px #be8199;
+  cursor: pointer;
+}
+
+#hometickets {
+  background-color: #be8199;
+  color: #3c4770;
+  border-color: #447294;
+  height: 40px;
+  font-size: 20px;
+  width: 150px;
+  margin-right: 20px;
+  border-width: 3px;
+  font-family: Monospace;
+  font-weight: bold;
+  border: solid;
+  text-align: center;
+}
+
+#hometickets:hover {
+  color: #be8199;
+  transform: scale(1.05);
+  background-color: #3c4770;
+  border-color: #aab1c3;
+  border: solid 2px #be8199;
+  cursor: pointer;
+}
+
+#allevents {
+  display: flex;
+  margin-left: 15px;
+  align-items: center;
+  background-color: #be8199;
+  color: #3c4770;
+  border-color: #447294;
+  height: 50px;
+  font-size: 25px;
+  width: 435px;
+  border-width: 3px;
+  font-family: Monospace;
+  font-weight: bold;
+  border: solid;
+  text-align: center;
+}
+
+#allevents:hover {
+  color: #be8199;
+  transform: scale(1.05);
+  background-color: #3c4770;
+  border-color: #aab1c3;
+  border: solid 2px #be8199;
+  cursor: pointer;
+}
+
+
+/* Events */
+
+.event_box {
+  display: flex;
+  flex-direction: column;
+  background-color: #aab1c3;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.netherlands_bg {
+  background-image: linear-gradient(to left, transparent 0%, #000000 70%),
+    url(../img/Tickets/netherlands.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 40% 40%;
+  border-radius: 10px;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.event_link {
+  display: flex;
+  color: #3c4770;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: Monospace;
+  font-weight: bold;
+  width: 160px;
+  padding-left: 3px;
+  padding-right: 3px;
+  border: 3px solid #3c4770;
+  background-color: #be8199;
+  border-radius: 6px;
+}
+
+.event_link:hover {
+  background-color: #3c4770;
+  transform: scale(1.1);
+  border-radius: 6px;
+  color: #be8199;
+  border: 3px solid #be8199;
+}
+
+.event_link:visited {
+  text-decoration: none;
+}
+
+.event_h1 {
+  color: #3c4770;
+  font-family: Century;
+  padding: 10px;
+}
+
+/* Tickets */
+
+.ticket_box {
+  display: flex;
+  flex-direction: column;
+  background-color: #aab1c3;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.ticket_h1 {
+  color: #3c4770;
+  font-family: Century;
+  margin-left: 45px;
+  padding: 10px;
+}
+
+.ticket_afstand {
+  margin-left: 50px;
+  margin-right: 50px;
+  color: #be8199;
+}
+
+.ticket_head {
+  font-family: Century;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
+.norway_bg {
+  background: linear-gradient(to left, transparent 0%, #000000 70%),
+    url(../img/Tickets/norway.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 40% 40%;
+  border-radius: 10px;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.sweden_bg {
+  background-image: linear-gradient(to left, transparent 0%, #000000 70%),
+    url(../img/Tickets/sweden.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 40% 40%;
+  border-radius: 10px;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.finland_bg {
+  background: linear-gradient(to left, transparent 0%, #000000 70%),
+    url(../img/Tickets/finland.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 40% 40%;
+  border-radius: 10px;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.oostenrijk_bg {
+  background: linear-gradient(to left, transparent 0%, #000000 70%),
+    url(../img/Tickets/oostenrijk.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 40% 40%;
+  border-radius: 10px;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.ticket_content {
+  padding: 1px;
+}
+
+.ticket_row {
+  display: flex;
+  flex-direction: row;
+}
+
+.ticket_input_bg {
+  background-color: #be8199;
+  width: 30px;
+}
+
+.ticket_margin_left {
+  margin-left: 25px;
+  margin-top: 15px;
+}
+
+.ticket_button {
+  color: #3c4770;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: Monospace;
+  font-weight: bold;
+  width: 100px;
+  padding-left: 3px;
+  padding-right: 3px;
+  border: 3px solid #3c4770;
+  background-color: #be8199;
+  border-radius: 6px;
+  margin-top: 15px;
+}
+
+.ticket_button:hover {
+  background-color: #3c4770;
+  transform: scale(1.02);
+  border-radius: 6px;
+  color: #be8199;
+  border: 3px solid #be8199;
+}
+
+.ticketPopupBox {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.ticketPopup {
+  display: none;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 5%);
+  z-index: 9;
+}
+.ticketContainer {
+  padding: 20px;
+  background-color: #dfcfd5;
+  border-color: black;
+  border-width: 3px;
+  border-style: solid;
+}
+.ticketContainer input[type="number"] {
+  width: 30px;
+  height: 20px;
+  padding: 5px;
+  background-color: #aab1c3;
+  outline-color: #3c4770;
+}
+.ticketContainer input[type="number"]:focus {
+  background-color: #aab1c3;
+  outline-color: #3c4770;
+}
+.ticketContainer .btnTicket {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  justify-content: center;
+  border: none;
+  background-color: #be8199;
+  font-family: Monospace;
+  font-weight: bold;
+  color: #3c4770;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  opacity: 0.8;
+  text-decoration: none;
+  border-color: #3c4770;
+  border-width: 3px;
+  border-style: solid;
+}
+
+.ticketContainer .btn_cancelTicket {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  justify-content: center;
+  padding: 7px;
+  border: none;
+  background-color: #aab1c3;
+  font-family: Monospace;
+  font-weight: bold;
+  color: #3c4770;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.8;
+  text-decoration: none;
+  border-color: #3c4770;
+  border-width: 3px;
+  border-style: solid;
+}
+
+.merch_checkbox_info {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.popup_ticket_title {
+  font-family: Century;
+}
+
+.ticket_featuring {
+  display: flex;
+  margin-right: 20px;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.ticket_featuring ol p {
+  margin-right: 20px;
+}
+
+.btn_cancelTicket:hover {
+  background-color: #3c4770;
+  color: #aab1c3;
+  border-color: #3c4770;
+  font-family: Monospace;
+  font-weight: bold;
+  border-width: 3px;
+  border: solid;
+  transform: scale(1.1);
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+  display: none;
+}
+
+.ticket_pop-up {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  z-index: 2;
+  display: none;
+}
+
+/* Merchandise */
+
+.merch {
+  display: flex;
+  justify-content: center;
+  color: #3c4770;
+}
+
+.merch_text {
+  color: #3c4770;
+  font-family: Monospace;
+}
+
+.merch-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 100%;
+}
+.merch-flex-item {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #aab1c3;
+  color: #3c4770;
+  font-family: Monospace;
+  font-weight: bold;
+  border: none;
+  font-size: 20px;
+  text-align: center;
+  width: 20%;
+  margin-bottom: 15px;
+  padding-bottom: 20px;
+  border-width: 3px;
+  border-color: #3c4770;
+  border-style: solid;
+  padding-bottom: 20px;
+}
+/* style for popup */
+#merch-select option {
+  font-size: 20px;
+}
+#merch-select {
+  height: 50px;
+  font-size: 20px;
+  font-family: monospace;
+  font-weight: bold;
+  color: #3c4770;
+}
+
+#btnMerch {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  justify-content: center;
+  padding: 7px;
+  border: none;
+  background-color: #be8199;
+  font-family: Monospace;
+  font-weight: bold;
+  color: #3c4770;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 80%;
+  margin-left: 10%;
+  opacity: 0.8;
+  text-decoration: none;
+  border-color: #3c4770;
+  border-width: 3px;
+  border-style: solid;
+}
+
+#btnMerch:hover {
+  background-color: #3c4770;
+  color: #aab1c3;
+  border-color: #3c4770;
+  font-family: Monospace;
+  font-weight: bold;
+  border-width: 3px;
+  border: solid;
+  transform: scale(1.02);
+}
+
+.img-shirt {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.img-shirt:hover {
+  transform: scale(1.05);
+  transition: all 0.5s;
+}
+
+.img-shirt-popup {
+  height: 50%;
+  width: 50%;
+}
+
+/* merch popup buttons */
+.merch_button {
+  color: #3c4770;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: Monospace;
+  font-weight: bold;
+  width: 100px;
+  padding-left: 3px;
+  padding-right: 3px;
+  border: 3px solid #3c4770;
+  background-color: #be8199;
+  border-radius: 6px;
+  margin-top: 15px;
+}
+.merch_button:hover {
+  background-color: #3c4770;
+  transform: scale(1.1);
+  border-radius: 6px;
+  color: #be8199;
+  border: 3px solid #be8199;
+}
+
+#merch-select {
+  display: flex;
+  justify-content: center;
+  background-color: #aab1c3;
+  border-color: #3c4770;
+  border-width: 2px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+  height: 30px;
+}
+
+.merch-popup {
+  max-width: 100%;
+}
+
+.merch_input {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-left: 72px;
+  margin-top: 10px;
+  font-size: 25px;
+  color: #3c4770;
+  background-color: #aab1c3;
+  border-color: #3c4770;
+  height: auto;
+  width: 50%;
+  height: 30px;
+  max-width: 100%;
+}
+
+/* Artists */
+
+.header_ha {
+  display: flex;
+}
+
+.artiestenbox {
+  background-color: #aab1c3;
+  margin: 40px;
+  border-radius: 10px;
+}
+
+.artiesten_afstand {
+  margin-left: 50px;
+  margin-right: 50px;
+  color: #be8199;
+}
+
+.artiest_mariah {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+  background-color: #aab1c3;
+  background: linear-gradient(to left, transparent 0%, #000000 70%),
+    url(../img/Artists/mariahcarey.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  font-weight: bold;
+  background-position: 30% 30%;
+  color: #be8199;
+}
+
+.artiest_mariah:hover {
+  transform: scale(1.01);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.artiest_michael {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+  background-color: #aab1c3;
+  background: linear-gradient(to left, transparent 0%, #000000 70%),
+    url(../img/Artists/michael.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  font-weight: bold;
+  background-position: 35% 35%;
+  color: #be8199;
+  margin-top: 5px;
+}
+
+.artiest_michael:hover {
+  transform: scale(1.01);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.artiest_aurora {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+  background-color: #aab1c3;
+  background: linear-gradient(to left, transparent 0%, #000000 70%),
+    url(../img/Artists/aurora2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  font-weight: bold;
+  background-position: 45% 45%;
+  color: #be8199;
+  margin-top: 5px;
+}
+
+.artiest_aurora:hover {
+  transform: scale(1.01);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.artiest_neighbourhood {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+  background-color: #aab1c3;
+  background: linear-gradient(to left, transparent 0%, #000000 70%),
+    url(../img/Artists/the_neighbourhood.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  font-weight: bold;
+  background-position: 40% 40%;
+  color: #be8199;
+}
+
+.artiest_neighbourhood:hover {
+  transform: scale(1.01);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.artiest_taylor_swift {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+  background-color: #aab1c3;
+  background: linear-gradient(to left, transparent 0%, #000000 70%),
+    url(../img/Artists/taylor_swift.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  font-weight: bold;
+  background-position: 45% 45%;
+  color: #be8199;
+  margin-top: 5px;
+}
+
+.artiest_taylor_swift:hover {
+  transform: scale(1.01);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.artiest_imagine_dragons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+  background-color: #aab1c3;
+  background: linear-gradient(to left, transparent 0%, #000000 70%),
+    url(../img/Artists/imaginedragons.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  font-weight: bold;
+  background-position: 14% 14%;
+  color: #be8199;
+  margin-top: 5px;
+}
+
+.artiest_imagine_dragons:hover {
+  transform: scale(1.01);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.artiest_ariana_grande {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+  background-color: #aab1c3;
+  background: linear-gradient(to left, transparent 0%, #000000 70%),
+    url(../img/Artists/arianagrande.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  font-weight: bold;
+  background-position: 40% 40%;
+  color: #be8199;
+  margin-top: 5px;
+}
+
+.artiest_ariana_grande:hover {
+  transform: scale(1.01);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.artiest_robbie_williams {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+  background-color: #aab1c3;
+  background: linear-gradient(to left, transparent 0%, #000000 70%),
+    url(../img/Artists/robbiewilliams.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  font-weight: bold;
+  background-position: 35% 35%;
+  color: #be8199;
+  margin-top: 5px;
+}
+
+.artiest_robbie_williams:hover {
+  transform: scale(1.01);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.artiest_sarah_brightman {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+  background-color: #aab1c3;
+  background: linear-gradient(to left, transparent 0%, #000000 70%),
+    url(../img/Artists/sarahbrightman.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  font-weight: bold;
+  background-position: 27% 27%;
+  color: #be8199;
+}
+
+.artiest_sarah_brightman:hover {
+  transform: scale(1.01);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.artiest_ed_sheeran {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+  background-color: #aab1c3;
+  background: linear-gradient(to left, transparent 0%, #000000 70%),
+    url(../img/Artists/edsheeran.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 5px;
+  background-position: 40% 40%;
+  color: #be8199;
+}
+
+.artiest_ed_sheeran:hover {
+  transform: scale(1.01);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.artiest_kate_bush {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+  background-color: #aab1c3;
+  background: linear-gradient(to left, transparent 0%, #000000 70%),
+    url(../img/Artists/katebush.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 5px;
+  background-position: 20% 20%;
+  color: #be8199;
+}
+
+.artiest_kate_bush:hover {
+  transform: scale(1.01);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.artiest_linkin_park {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+  background-color: #aab1c3;
+  background: linear-gradient(to left, transparent 0%, #000000 70%),
+    url(../img/Artists/linkinpark.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 5px;
+  background-position: 25% 25%;
+  color: #be8199;
+}
+
+.artiest_linkin_park:hover {
+  transform: scale(1.01);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.artiest_text {
+  margin-left: 25px;
+}
+
+.artiest_lettertype {
+  font-family: Century;
+}
+
+.artiest_informatie {
+  color: #3c4770;
+  font-family: Monospace;
+  font-weight: bold;
+}
+
+/* House Rules */
+
+.house_rules {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 200px;
+  margin-right: 200px;
+  border-radius: 15px;
+  background-color: #aab1c3;
+  margin-bottom: 25px;
+  border: #3c4770 2px solid;
+  margin-top: 50px;
+}
+
+.house_rules p {
+  color: #3c4770;
+  font-family: Monospace;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.header_ha h1 {
+  color: #3c4770;
+  font-family: Monospace;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.house_rulestext {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.collapsible {
+  background-color: #3c4770;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.active,
+.collapsible:hover {
+  background-color: #3c4770;
+}
+
+.collapsible:after {
+  content: "\002B";
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.houserules_content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #aab1c3;
+  border-style: solid;
+  border-color: #be8199;
+}
+
+/* News */
+
+.news_head img {
+  display: flex;
+  margin: auto;
+  max-width: 100%;
+  height: 80%;
+  width: auto\9;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 1460px;
+  height: 450px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.news_img {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  width: 700px;
+  height: 250px;
+  border-radius: 10px;
+}
+.news_img img {
+  max-width: 100%;
+  transition: all 0.4s;
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scale(1);
+}
+
+.news_img:hover img {
+  transform: scale(1.08);
+}
+
+.news_kopje_2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* News Pagines */
+
+.news-content-header {
+  display: flex;
+  margin-left: 2.5%;
+  margin-top: 2.5%;
+}
+
+.news-content {
+  display: flex;
+  flex-direction: row;
+  background-color: #aab1c3;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-bottom: 2.5%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #3c4770;
+  border-radius: 10px;
+}
+
+.news-content p {
+  display: flex;
+  margin-right: 10px;
+  margin-left: 10px;
+  color: #3c4770;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.news-content-header h1 {
+  color: #3c4770;
+  font-family: Century;
+  font-weight: bold;
+  font-size: 45px;
+}
+
+.secret_head img {
+  display: flex;
+  margin: auto;
+  max-width: 100%;
+  height: 80%;
+  width: auto\9;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 1460px;
+  max-height: fit-content;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  flex: row;
+  background-color: #aab1c3;
+  padding-bottom: 25px;
+  border: none;
+  border-top: #3c4770;
+  border-style: solid;
+  border-width: 3px;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+}
+
+.update {
+  display: flex;
+  padding-left: 50px;
+  flex-direction: column;
+  max-width: 50%;
+  color: #3c4770;
+  font-family: Monospace;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.sub {
+  display: flex;
+  padding-right: 50px;
+  flex-direction: column;
+  font-family: Century;
+  max-width: 50%;
+  color: #3c4770;
+}
+
+.backgroundcolor {
+  background-color: #dfcfd5;
+  border: solid 2px #3c4770;
+  height: 30px;
+  width: 500px;
+}
+
+.footer_label {
+  background-color: #aab1c3;
+  font-family: Monospace;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.footer_subscribe {
+  background-color: #aab1c3;
+  color: #3c4770;
+  border-color: #3c4770;
+  height: 40px;
+  font-size: 100;
+  width: 150px;
+  border-width: 3px;
+  font-family: Monospace;
+  font-weight: bold;
+  border: solid;
+}
+
+.footer_subscribe:hover {
+  background-color: #3c4770;
+  color: #aab1c3;
+  border-color: #3c4770;
+  font-family: Monospace;
+  font-weight: bold;
+  border-width: 3px;
+  border: solid;
+  transform: scale(1.1);
+}
+
+.reserved {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  font-size: 10px;
+  background-color: #3c4770;
+  color: #dfcfd5;
+  border-top: #dfcfd5;
+  border-style: solid;
+  border-width: 3px;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+}
+
+.footerimage ul {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  text-decoration: none;
+}
+
+.footerimage ul li {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  text-decoration: none;
+}
+
+.footer-sub {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.footerimage a:hover {
+  transform: scale(1.5);
+}
+
+.footerimage li a {
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+img[alt="gmail-link"] {
+  width: 35px;
+  height: 35px;
+  height: fit-content;
+}
+
+img[alt="telefoon-link"] {
+  width: 35px;
+  height: 35px;
+  height: fit-content;
+}
+
+img[alt="twitter-link"] {
+  width: 35px;
+  height: 35px;
+  height: fit-content;
+}
+
+img[alt="instagram-link"] {
+  width: 35px;
+  height: 35px;
+  height: fit-content;
+}
